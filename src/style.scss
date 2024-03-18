@@ -1,0 +1,225 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-eightyfour-sideload-json-posts-wrapper {
+
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
+
+  margin: 30px 0;
+
+}
+
+.wp-block-eightyfour-sideload-json-posts {
+  
+  &.initialized {
+
+    & + .eightyfour-pagination-container {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      padding: 10px;
+      background-color: rgba( 0, 0, 0, 0.025 );
+
+      button {
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 0.875rem;
+        text-transform: uppercase;
+
+        padding: 5px 2px;
+
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid currentcolor;
+
+        &:not([disabled]) {
+
+          cursor: pointer;
+
+          &:hover {
+            color: var(--wp--preset--color--primary);
+            border-bottom-style: dashed;
+          }
+
+        }
+
+        &.active {
+          pointer-events: none;
+          border-bottom-color: transparent;
+          translate: 0 -2px;
+        }
+
+        &.eightyfour-pagination-button {
+  
+          &:nth-child( 2 ) {
+            order: -1;
+          }
+          &:nth-child( 3 ) {
+            order: 1;
+          }
+  
+        }
+
+      }
+
+      .eightyfour-pagination-numbers {
+
+        display: flex;
+        gap: 10px;
+
+      }
+
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    > a {
+
+      box-sizing: border-box;
+
+      color: inherit;
+      text-decoration: none;
+
+      display: flex;
+      gap: 15px;
+
+      overflow: hidden;
+
+      padding-bottom: 30px;
+
+      transition: opacity 275ms ease-in, translate 275ms ease-in;
+
+      &:hover {
+
+        h2 {
+
+          color: var(--wp--preset--color--primary);
+
+        }
+
+        footer {
+
+          span {
+
+            border-bottom-style: dashed;
+
+          }
+
+        }
+
+      }
+
+      &.hidden {
+        opacity: 0;
+        translate: 0 15px;
+        max-height: 0;
+        padding-bottom: 0;
+        transition: none;
+      }
+
+      *:first-child {
+        margin-top: 0;
+      }
+
+      *:last-child {
+        margin-bottom: 0;
+      }
+
+      aside {
+
+        max-width: 25%;
+        flex-basis: 25%;
+        flex-grow: 1;
+
+        figure {
+
+          margin: 0;
+  
+          img {
+  
+            display: block;
+  
+            width: 100%;
+            height: auto;
+  
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+  
+            box-shadow: 2px 2px 2px rgba( 0, 0, 0, 0.15 );
+  
+          }
+  
+        }
+
+      }
+
+      main {
+
+        flex-basis: calc( 75% - 15px );
+        max-width: calc( 75% - 15px );
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        header {
+  
+          display: flex;
+          gap: 15px;
+          
+          h2 {
+            font-size: 1.5rem;
+          }
+          
+        }
+
+        date {
+          font-size: 0.875rem;
+        }
+
+        article {
+
+          display: none;
+
+        }
+
+        footer {
+
+          span {
+
+            display: inline-block;
+
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            border-bottom: 1px solid currentcolor;
+
+            &:active {
+              content: '…';
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
